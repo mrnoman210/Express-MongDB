@@ -1,4 +1,4 @@
-const userModels = require("../models/userModels");
+const userModel = require("../models/userModels");
 
 // exports.getAllUsers = async (req, res) => {
 //   try {
@@ -7,11 +7,10 @@ const userModels = require("../models/userModels");
 //   } catch (error) {
 //     console.log(error);
 //   }
-
 // };
 exports.getUserDetails = async (req, res) => {
   try {
-    const user = await userModels.insertOne(req.body);
+    const user = await userModel.insertOne(req.body);
     res.send({ user });
   } catch (error) {
     console.log(error);
