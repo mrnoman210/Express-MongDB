@@ -1,7 +1,7 @@
 const express = require("express");
-// const { getAllUsers } = require("./controllers/userController");
+const { getAllUsers } = require("./controllers/userController");
 
 const app = express();
-const user = require("./routes/userRoutes");
-app.use("/", require("./controllers/userController"));
+// const user = require("./routes/userRoutes");
+app.use("/user", getAllUsers);
 module.exports = app;
