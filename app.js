@@ -1,7 +1,10 @@
 const express = require("express");
-const { getAllUsers } = require("./controllers/userController");
+const app = require("express")();
+// const bodyParser = require("body-parser");
+// app.use(bodyParser.json()); // for parsing application/json
+// app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-const app = express();
+const user = require("./routes/userRoutes");
 // const user = require("./routes/userRoutes");
-app.use("/user", getAllUsers);
+app.use("/user", user);
 module.exports = app;
