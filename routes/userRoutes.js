@@ -1,7 +1,14 @@
-const { signup } = require("../controllers/userController");
+const {
+  signup,
+  getUserDetails,
+  getUserById,
+  deleteUserById,
+} = require("../controllers/userController");
+const cors = require("cors");
 const express = require("express");
 const router = express.Router();
-// router.route("/user").get();
-// router.post("/user").get(getAllUsers);
-router.route("/").post(signup);
+router.route("/user").post(signup).get(getUserDetails);
+router.route("/user/:id", cors()).get(getUserById);
+router.route("/delete/:id", cors()).get(deleteUserById);
+
 module.exports = router;
